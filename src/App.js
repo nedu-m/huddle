@@ -1,8 +1,11 @@
 import GlobalStyles from './components/styles/Global';
 import { ThemeProvider } from 'styled-components';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import { Container } from './components/styles/Container.styled';
 import Theme from './components/styles/Theme.styled';
+import content from './Content';
+import Card from './components/Card';
 
 
 function App() {
@@ -12,8 +15,11 @@ function App() {
       <GlobalStyles />
       <Header />
       <Container>
-        <h1>Hello world</h1>
-      </Container>
+          {content.map((item, index) => (
+            <Card key={index} item={item} />
+        ))}
+        </Container>
+        <Footer />
       </>
     </ThemeProvider>
   );
